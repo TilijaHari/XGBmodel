@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wageclass Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="content">
+    <h1 style=".....">Prediction of a Person's WageClass</h1>
+
+    <div class="form">
+        <form action="/predict" method="POST">
+            <input type="number" name="age" id="age" placeholder="AGE">
+            <input type="number" name="fnlwgt" id="fnlwgt" placeholder="fnlwgt">
+            <input type="number" name="education_num" id="education_num" placeholder="education_num">
+            <input type="number" name="capital_gain" id="capital_gain" placeholder="capital_gain">
+            <input type="number" name="capital_loss" id="capital_loss" placeholder="capital_loss">
+            <input type="number" name="hours_per_week" id="hours_per_week" placeholder="hours_per_week"><br><br>
+            <input type="number" name="workclass_ Local-gov" id="workclass_ Local-gov" min="0" max="1" step="1" maxlength="22" placeholder="Local-gov">
+            <input type="number" name="workclass_ Never-worked" id="workclass_ Never-worked" min="0" max="1" step="1" placeholder="Never-worked">
+            <input type="number" name="workclass_ Private" id="workclass_ Private" min="0" max="1" step="1" placeholder="class_Private">
+            <input type="number" name="workclass_ Self-emp-inc" id="workclass_ Self-emp-inc" min="0" max="1" step="1" placeholder="Self-emp-inc">
+            <input type="number" name="workclass_ Self-emp-Not-inc" id="workclass_ Self-emp-Not-inc" min="0" max="1" step="1" placeholder="Self-emp-Not-inc">
+            <input type="number" name="workclass_ State-gov" id="workclass_ State-gov" min="0" max="1" step="1" placeholder="State-gov">
+            <input type="number" name="workclass_0" id="workclass_0" min="0" max="1" step="1" placeholder="workclass_0"><br><br>
+            <input type="number" name="education_ Assoc-voc" id="education_ Assoc-voc" min="0" max="1" step="1" placeholder="Assoc-voc">
+            <input type="number" name="education_ Bachelors" id="education_ Bachelors" min="0" max="1" step="1" placeholder="Bachelors">
+            <input type="number" name="education_ Doctorate" id="education_ Doctorate" min="0" max="1" step="1" placeholder="Doctorate">
+            <input type="number" name="education_ HS-grad" id="education_ HS-grad" min="0" max="1" step="1" placeholder="HS-grad">
+            <input type="number" name="education_ Masters" id="education_ Masters" min="0" max="1" step="1" placeholder="Masters">
+            <input type="number" name="eucation_ Preschool" id="eucation_ Preschool" min="0" max="1" step="1" placeholder="Preschool">
+            <input type="number" name="eucation_ Prof-school" id="eucation_ Prof-school" min="0" max="1" step="1" placeholder="Prof-school">
+            <input type="number" name="education_ Some-college" id="education_ Some-college" min="0" max="1" step="1" placeholder="Some-college">
+            <input type="number" name="education_Primary" id="education_Primary" min="0" max="1" step="1" placeholder="Primary"><br><br>
+            <input type="number" name="marital_status_ Married-civ-spouse" id="marital_status_ Married-civ-spouse" min="0" max="1" step="1" placeholder="Married-civ-spouse">
+            <input type="number" name="marital_status_ Married-spouse-absent" id="marital_status_ Married-spouse-absent" min="0" max="1" step="1" placeholder="Married-spouse-absent">
+            <input type="number" name="marital_status_ Never-married" id="marital_status_ Never-married" min="0" max="1" step="1" placeholder="Never-married">
+            <input type="number" name="marital_status_ Separated" id="marital_status_ Separated" min="0" max="1" step="1" placeholder="Separated">
+            <input type="number" name="marital_status_ Widowed" id="marital_status_ Widowed" min="0" max="1" step="1" placeholder="Widowed"><br><br>
+            <input type="number" name="occupation_ Craft-repair" id="occupation_ Craft-repair" min="0" max="1" step="1" placeholder="Craft-repair">
+            <input type="number" name="occupation_ Exec-managerial" id="occupation_ Exec-managerial" min="0" max="1" step="1" placeholder="Exec-managerial">
+            <input type="number" name="occupation_ Farming-fishing" id="occupation_ Farming-fishing" min="0" max="1" step="1" placeholder="Farming-fishing">
+            <input type="number" name="occupation_ Handlers_cleaners" id="occupation_ Handlers_cleaners" min="0" max="1" step="1" placeholder="Handlers_cleaners">
+            <input type="number" name="occupation_ Machine-up-inspct" id="occupation_ Machine-up-inspct" min="0" max="1" step="1" placeholder="Machine-up-inspct">
+            <input type="number" name="occupation_ Other-service" id="occupation_ Other-service" min="0" max="1" step="1" placeholder="Other-service">
+            <input type="number" name="occupation_ Priv-house-serv" id="occupation_ Priv-house-serv" min="0" max="1" step="1" placeholder="Priv-house-serv">
+            <input type="number" name="occupation_ Prof-specialty" id="occupation_ Prof-specialty" min="0" max="1" step="1" placeholder="Prof-specialty">
+            <input type="number" name="occupation_ Protective-serv" id="occupation_ Protective-serv" min="0" max="1" step="1" placeholder="Protective-serv">
+            <input type="number" name="occupation_ Sales" id="occupation_ Sales" min="0" max="1" step="1" placeholder="Sales">
+            <input type="number" name="occupation_ Tech-support" id="occupation_ Tech-support" min="0" max="1" step="1" placeholder="Tech-support">
+            <input type="number" name="occupation_ Transport-moving" id="occupation_ Transport-moving" min="0" max="1" step="1" placeholder="Transport-moving">
+            <input type="number" name="occupation_0" id="occupation_0" min="0" max="1" step="1" placeholder="occupation_0"><br><br>
+            <input type="number" name="relationship_ Not-In-family" id="relationship_ Not-In-family" min="0" max="1" step="1" placeholder="Not-In-family">
+            <input type="number" name="relationship_ Other-relative" id="relationship_ Other-relative" min="0" max="1" step="1" placeholder="Other-relative">
+            <input type="number" name="relationship_ Own-child" id="relationship_ Own-child" min="0" max="1" step="1" placeholder="Own-child">
+            <input type="number" name="relationship_ Unmarried" id="relationship_ Unmarried" min="0" max="1" step="1" placeholder="Unmarried">
+            <input type="number" name="relationship_ Wife" id="relationship_ Wife" min="0" max="1" step="1" placeholder="Wife"><br><br>
+            <input type="number" name="race_ Asian-Pac-Islander" id="race_ Asian-Pac-Islander" min="0" max="1" step="1" placeholder="Asian-Pac-Islander">
+            <input type="number" name="race_ Black" id="race_ Black" min="0" max="1" step="1" placeholder="race_Black">
+            <input type="number" name="race_ Other" id="race_ Other" min="0" max="1" step="1" placeholder="race_Other">
+            <input type="number" name="race_ White" id="race_ White" min="0" max="1" step="1" placeholder="race_White"><br><br>
+            <input type="number" name="sex_ Male" id="sex_ Male" min="0" max="1" step="1" placeholder="Male"><br><br>
+            <input type="number" name="native_country_Central_America" id="native_country_Central_America" min="0" max="1" step="1" placeholder="Central_America">
+            <input type="number" name="native_country_EU" id="native_country_EU" min="0" max="1" step="1" placeholder="EU">
+            <input type="number" name="native_country_North_America" id="native_country_North_America" min="0" max="1" step="1" placeholder="North_America">
+            <input type="number" name="native_country_South_America" id="native_country_South_America" min="0" max="1" step="1" placeholder="South_America">
+
+
+
+            <input type="submit" value="Predict">
+
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
